@@ -1,0 +1,98 @@
+/* HairMod - toi, nhan cam theo giao dien res_base cua game. Font he thong (CSP chi cho tai nguyen cung nguon). */
+:root {
+  --bg: #0f0d0b;
+  --bg-2: #17130f;
+  --panel: #1e1913;
+  --line: #3a2e22;
+  --text: #f4ece3;
+  --muted: #b8a999;
+  --accent: #ff8a00;
+  --accent-2: #ffb347;
+  --danger: #ff6b5b;
+  --radius: 14px;
+  --max: 1040px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 500px at 50% -120px, rgba(255, 138, 0, 0.18), transparent 70%),
+    linear-gradient(var(--bg), var(--bg-2));
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+a { color: var(--accent-2); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+
+/* Thanh dieu huong */
+.nav { position: sticky; top: 0; z-index: 10; background: rgba(15, 13, 11, 0.86); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 800; letter-spacing: 0.3px; }
+.brand-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent); }
+.links { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+.links a { color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: 999px; white-space: nowrap; font-weight: 600; font-size: 15px; }
+.links a:hover, .links a[aria-current="page"] { color: var(--bg); background: var(--accent); }
+
+/* Dau trang */
+.hero { text-align: center; padding: 56px 0 28px; }
+.hero img { width: min(560px, 92%); height: auto; filter: drop-shadow(0 8px 24px rgba(255, 138, 0, 0.25)); }
+.hero h1 { font-size: clamp(26px, 5vw, 40px); line-height: 1.2; margin: 18px 0 8px; }
+.hero p { color: var(--muted); max-width: 640px; margin: 0 auto; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 24px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 22px; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid var(--accent); cursor: pointer; font-size: 16px; }
+.btn-primary { background: var(--accent); color: #1b1006; }
+.btn-primary:hover { background: var(--accent-2); border-color: var(--accent-2); }
+.btn-ghost { background: transparent; color: var(--accent-2); }
+.btn-ghost:hover { background: rgba(255, 138, 0, 0.12); }
+
+/* Khoi noi dung */
+.section { padding: 28px 0; }
+.section h2 { font-size: 24px; margin: 0 0 16px; }
+.page-title { font-size: clamp(26px, 5vw, 34px); margin: 36px 0 8px; }
+.lead { color: var(--muted); margin: 0 0 20px; }
+
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+.card h3 { margin: 0 0 6px; font-size: 18px; color: var(--accent-2); }
+.card p { margin: 0; color: var(--muted); }
+
+.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.steps li { counter-increment: s; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px 14px 56px; position: relative; }
+.steps li::before { content: counter(s); position: absolute; left: 16px; top: 14px; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #1b1006; font-weight: 800; display: grid; place-items: center; font-size: 14px; }
+
+code { background: #0b0907; border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; font-size: 14px; word-break: break-all; }
+
+/* Thong bao + ban phat hanh */
+.list { display: grid; gap: 12px; }
+.notice { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 14px 16px; }
+.notice h3 { margin: 0; font-size: 18px; }
+.notice time { color: var(--muted); font-size: 14px; }
+.notice p { margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.state { color: var(--muted); padding: 18px; border: 1px dashed var(--line); border-radius: var(--radius); text-align: center; }
+.state.error { color: var(--danger); border-color: var(--danger); }
+.state .btn { margin-top: 12px; }
+
+.file { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.file strong { overflow-wrap: anywhere; }
+.file span { color: var(--muted); font-size: 14px; }
+
+footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 22px 0 34px; color: var(--muted); font-size: 14px; text-align: center; }
+
+@media (max-width: 560px) {
+  .nav .wrap { height: auto; flex-direction: column; align-items: stretch; padding-top: 10px; padding-bottom: 8px; gap: 6px; }
+  .links a { padding: 6px 10px; font-size: 14px; }
+  .hero { padding-top: 32px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn, .links a { transition: background 0.15s, color 0.15s, border-color 0.15s; }
+}
